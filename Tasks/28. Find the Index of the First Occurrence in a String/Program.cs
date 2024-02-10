@@ -11,30 +11,17 @@ namespace ConsoleApp17
     {
         static void Main(string[] args)
         {
-            string s = Console.ReadLine();
-            Console.WriteLine(ReverseWords(s));
+            string haystack = Console.ReadLine();
+            string needle = Console.ReadLine();
+
+            Console.WriteLine(StrStr(haystack,needle));
         }
-        static string ReverseWords(string s)
+        static int StrStr(string haystack, string needle)
         {
-            string[] words = s.Split(new char[] { ' ' });
-            s = "";
-            for (int i = words.Length - 1; i >= 0; i--)
-            {
-                if (words[i] != "")
-                {
-                    if (s == "")
-                    {
-                        words[i] = words[i].Trim();
-                        s += words[i];
-                    }
-                    else
-                    {
-                        words[i] = words[i].Trim();
-                        s += " " + words[i];
-                    }
-                }
-            }
-            return s;
+            int k = -1;
+
+            k=haystack.IndexOf(needle);
+            return k;
         }
     }
 }
